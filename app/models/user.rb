@@ -6,6 +6,8 @@ class User < ApplicationRecord
          :authentication_keys => [:login]
          
   attr_accessor :login
+  validates :username, presence: true, uniqueness: true
+  #validates :email, presence: true, uniqueness: true
   
   validate :validate_username
 

@@ -18,6 +18,7 @@
 			<% if user_signed_in? %> 
 				<%= current_user.first_name %> <br />
 				<%= button_to 'Logout', destroy_user_session_path, method: :delete %> 
+				<%= button_to 'Edit', edit_user_registration_path, method: :get %>
 			<% end %>
 		</div>
 
