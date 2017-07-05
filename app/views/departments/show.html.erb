@@ -12,9 +12,9 @@
     </tr>
   </thead>
   <tbody>
-   <% @department.users.each_with_index do |names| %>
+   <% @department.users.each_with_index do |user| %>
       <tr>
-        <td><%= names.first_name %></td>
+        <td><%= user.first_name %></td>
       </tr>
     <% end %>
   </tbody>
