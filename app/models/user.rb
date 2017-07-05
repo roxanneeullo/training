@@ -6,16 +6,10 @@ class User < ApplicationRecord
          :authentication_keys => [:login]
          
   attr_accessor :login
+  belongs_to :department
   validates :username, presence: true, uniqueness: true
-  #validates :email, presence: true, uniqueness: true
-  
-  validate :validate_username
-
-  def validate_username
-    if User.where(email: username).exists?
-      errors.add(:username, :invalid)
-    end
-  end
+  validates :department, presence: true
+  validates :email, presence: true, uniqueness: true
   
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup

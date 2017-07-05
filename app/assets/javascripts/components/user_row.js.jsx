@@ -8,6 +8,8 @@ var UserRow = React.createClass({
         <td>{user.last_name}</td>
         <td>{user.position}</td>
         <td>{user.email}</td>
+				<td>{user.username}</td>
+				<td>{user.department.department_name}</td>
         <td><a href={"/users/"+user.id}>Show</a></td>
       </tr>
     )

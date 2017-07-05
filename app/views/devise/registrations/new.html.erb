@@ -40,6 +40,15 @@
     <%= f.label :position %><br />
     <%= f.text_field :position %>
   </div>
+	
+  <div class="field">
+    <%= f.label :department_id %><br />
+		<%= f.select(:department_id) do %>
+			<% Department.all.each do |content| -%>
+		  	<%= content_tag(:option, content.department_name, value: content.id)%>
+		  <% end %>
+		<% end %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>

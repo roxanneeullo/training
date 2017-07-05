@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Department name:</strong>
+	<%= @department.department_name %>
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Users in Department:</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+  <tbody>
+   <% @department.users.each_with_index do |names| %>
+      <tr>
+        <td><%= names.first_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_department_path(@department) %> |
+<%= link_to 'Back', departments_path %>
