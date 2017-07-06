@@ -2,6 +2,21 @@
 
 <h1>Users</h1>
 
+<%= search_form_for @q do |f| %>
+
+  <%= f.label :name %>
+  <%= f.search_field :full_name_cont %>
+	
+  <%= f.label :position %>
+  <%= f.search_field :position_cont %>
+	
+	<%= f.label :department_name %>
+	<%= f.collection_select(:department_id_eq, Department.all, :id, :department_name, { :prompt => 'Select Department' })  %>
+	
+
+  <%= f.submit %>
+<% end %>
+
 <%= react_component("UserList", users: @users.as_json(include: :department)) %>
 
 <%= will_paginate @users %>
