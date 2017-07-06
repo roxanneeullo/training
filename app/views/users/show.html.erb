@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<div class="field">
+	<%= image_tag @user.avatar.url(:thumb) %>
+</div>
+
 <p>
   <strong>Username:</strong>
   <%= @user.username %>
@@ -23,6 +27,11 @@
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
+</p>
+
+<p>
+	<strong>Department</strong>
+	<%= @user.department.department_name%>
 </p>
 
 <%= link_to 'Back', users_path %>
