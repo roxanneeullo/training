@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates :department, presence: true
   validates :email, presence: true, uniqueness: true
   
-  has_attached_file :avatar, :styles => { :thumb => "200x200>" }
+  has_attached_file :avatar, :styles => { :thumb => "200x200>" }, default_url: "/images/:style/missing.png"
   validates_attachment :avatar,
     content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
   validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 2.megabytes
