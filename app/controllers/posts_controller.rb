@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   def index
-     @posts = Post.order('created_at desc').paginate(page: params[:page], per_page: 10)
+     @posts = Post.includes(user:[:department]).order('created_at desc').paginate(page: params[:page], per_page: 10)
      @post = Post.new
   end
   
@@ -9,8 +9,12 @@ class PostsController < ApplicationController
     @post = current_user.post.create(post_params)
 
       if @post.save
-        flash[:success] = "Post created!"
         redirect_to :back
+        flash[:success] = "Post created!"
+      else
+        
+        redirect_to :back
+        flash[:fail] = "Post cannot be blank!"
       end
   end
   
