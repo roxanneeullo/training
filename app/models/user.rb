@@ -7,6 +7,7 @@ class User < ApplicationRecord
          
   attr_accessor :login
   belongs_to :department
+  has_many :post
   validates :username, presence: true, uniqueness: true
   validates :department, presence: true
   validates :email, presence: true, uniqueness: true
