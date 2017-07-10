@@ -1,22 +1,36 @@
-<%= form_for(department) do |f| %>
-  <% if department.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(department.errors.count, "error") %> prohibited this department from being saved:</h2>
-
-      <ul>
-      <% department.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :department_name %>
-    <%= f.text_field :department_name %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<div class="jumbotron">
+	<div class="row">
+		<div class="col-sm-6 col-md-4 col-md-offset-4">
+				<%= form_for(department) do |f| %>
+			   <% if department.errors.any? %>
+			     <div id="error_explanation">
+			       <h2><%= pluralize(department.errors.count, "error") %> 
+							 prohibited this department from being saved:</h2>
+						 <ul>
+			       	<% department.errors.full_messages.each do |message| %>
+			       		<li><%= message %></li>
+			    	 	<% end %>
+			       </ul>
+			     </div>
+			   <% end %>
+				 
+					<div class="account-wall">
+						<form class="form-signin">
+					  	<div class="container">
+						    <%= f.label :department_name %>
+						    <%= f.text_field :department_name, class: "form-control" %>
+					  	</div>
+							<div class="container">
+								<br>
+							</div>
+					   <div class="actions">
+							 <div class="container">
+					     	<%= f.submit "Create", class: "btn btn-sm btn-danger"%>
+						 	 </div>
+					   </div>
+					 	</form>
+					</div>
+				<% end %>
+		</div>
+	</div>
+</div>

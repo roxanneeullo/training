@@ -1,23 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
-
-<%= search_form_for @q do |f| %>
-
-  <%= f.label :name %>
-  <%= f.search_field :full_name_cont %>
+<div class="text-center title">
+	<h1>Users</h1>
+</div>
+<div class="container">
+	<%= search_form_for @q do |f| %>
 	
-  <%= f.label :position %>
-  <%= f.search_field :position_cont %>
-	
-	<%= f.label :department_name %>
-	<%= f.collection_select(:department_id_eq, Department.all, :id, :department_name, { :prompt => 'Select Department' })  %>
-	
+  	<%= f.label :name %>
+  	<%= f.search_field :full_name_cont %>
+		
+		<%= f.label :position %>
+ 	 	<%= f.search_field :position_cont %>
 
-  <%= f.submit %>
-<% end %>
+		<%= f.label :department_name %>
+		<%= f.collection_select(:department_id_eq, Department.all, :id, :department_name, { :prompt => 'Select Department' })  %>
+		
+		<%= f.submit "Search", class: "btn btn-sm btn-danger"%>
+	<% end %>
+</div>
 
+<div class="jumbotron">
 <%= react_component("UserList", users: @users.as_json(include: :department)) %>
+</div>
 
-<%= will_paginate @users %>
+<div class="text-center">
+	<%= will_paginate @users %>
+</div>
 <br>

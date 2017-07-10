@@ -6,10 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+(1..20).each do |i|
+  department_name = Faker::StarWars.planet
+  Department.create(department_name: department_name )
+end
+
 (1..50).each do |i|
   first_name = Faker::Name.first_name
   last_name  = Faker::Name.last_name
   email      = Faker::Internet.free_email("#{first_name} #{last_name}")
   position   = Faker::Name.title
-  User.create(first_name: first_name, last_name: last_name, email: email, position: position)
+  username   = Faker::Zelda.character
+  password   = Faker::Pokemon.name
+  department_id = rand(1..20)
+  User.create(first_name: first_name, last_name: last_name, email: email, position: position, username: username, password: password, department_id: department_id )
+end
+
+(1..20).each do |i|
+  content = Faker::StarWars.wookie_sentence
+  user_id = rand(1..50)
+  Post.create(content: content, user_id: user_id )
 end

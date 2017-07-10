@@ -3,29 +3,38 @@
   <head>
     <title>StaffList</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 		
   </head>
-
-  <body>
+	
+	<body>
+  	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    	<div class="container">
+       	<div class="navbar-header">
+					<% if user_signed_in? %>
+						<a class="navbar-brand"><%= current_user.first_name %> </a>
+					</div>
+		        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		        	<ul class="nav navbar-nav">
+		          	<li><%= link_to 'Users', users_path, method: :get %></li>
+		            <li><%= link_to 'Departments', departments_path, method: :get %></li>
+		            <li><%= link_to 'Newsfeed', posts_path, method: :get %></li>
+								<li></li>
+								<li><%= link_to 'Edit User', edit_user_registration_path, method: :get %></li>
+								<li>	<%= link_to 'Logout', destroy_user_session_path, method: :delete %> </li>
+		            </ul>		
+							</div>
+					<% else %>
+						<a class="navbar-brand">Staff List</a>
+					<% end %>
+					</div>
+  	</div><!--container-->
+	</nav>
 		
-    <div class="container">
-      <%= yield %>
-    </div>
-		
-		<div id="user">
-			<% if user_signed_in? %> 
-				<%= current_user.first_name %> <br />
-				<%= button_to 'Logout', destroy_user_session_path, method: :delete %> 
-				<%= button_to 'Edit User', edit_user_registration_path, method: :get %>
-				<%= button_to 'Users', users_path, method: :get %>
-				<%= button_to 'Departments', departments_path, method: :get %>
-				<%= button_to 'Posts', posts_path, method: :get %>
-			<% end %>
-			
-		</div>
+  <div class="container">
+  	<%= yield %>
+  </div>
 
   </body>
 </html>

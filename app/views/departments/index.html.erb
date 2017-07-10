@@ -1,27 +1,48 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Departments</h1>
+<div class="text-center title">
+	<h1>Departments</h1>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Department name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container">
+	<%= button_to "New Department", new_department_path, method: :get, class: "btn btn-sm btn-danger" %>
+</div>
 
-  <tbody>
-    <% @departments.each do |department| %>
-      <tr>
-        <td><%= department.department_name %></td>
-        <td><%= link_to 'Show', department %></td>
-        <td><%= link_to 'Edit', edit_department_path(department) %></td>
-        <td><%= link_to 'Destroy', department, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+	<div class="row col-md-10 col-md-offset-1 custyle">
+		<table class="table table-striped custab">
+  		<thead>
+    		<tr>
+      		<th>Department name</th>
+      		<th colspan="3"></th>
+    		</tr>
+  		</thead>
+
+  	<tbody>
+	  	<% @departments.each do |department| %>
+      	<tr>
+					<div class="col-md-3">
+        	<td><%= department.department_name %></td>
+				</div>
+					<div class="col-md-3">
+        	<td><%= link_to 'Show', department %></td>
+				</div>
+				<div class="col-md-3">
+        	<td><%= link_to 'Edit', edit_department_path(department) %></td>
+				</div>
+					<div class="col-md-3">
+        	<td><%= link_to 'Destroy', department, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				</div>
+      	</tr>
+    		<% end %>
+  		</tbody>
+		</table>
+	</div><!--row-->
+</div><!--jumbo-->
 
 <br>
 
-<%= link_to 'New Department', new_department_path %>
+<div class="text-center">
+	<%= will_paginate @departments %>
+</div>
+
