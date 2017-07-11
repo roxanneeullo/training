@@ -11,6 +11,7 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
   validates :department, presence: true
   validates :email, presence: true, uniqueness: true
+  validates :first_name, presence: true
   
   has_attached_file :avatar, :styles => { :thumb => "200x200>" }, default_url: "/images/:style/axolotl.jpg"
   validates_attachment :avatar,
