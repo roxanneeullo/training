@@ -10,7 +10,6 @@ var UserRow = React.createClass({
         <td>{user.email}</td>
 				<td>{user.username}</td>
 				<td>{user.department ? user.department.department_name : ""}</td>
-				<td>{user.avatar_file_name}</td>
         <td><a href={"/users/"+user.id}>Show</a></td>
       </tr>
     )

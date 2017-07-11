@@ -3,24 +3,36 @@
 <div class="text-center title">
 	<h1>Users</h1>
 </div>
-<div class="container">
-	<%= search_form_for @q do |f| %>
-	
-  	<%= f.label :name %>
-  	<%= f.search_field :full_name_cont %>
-		
-		<%= f.label :position %>
- 	 	<%= f.search_field :position_cont %>
 
-		<%= f.label :department_name %>
-		<%= f.collection_select(:department_id_eq, Department.all, :id, :department_name, { :prompt => 'Select Department' })  %>
-		
-		<%= f.submit "Search", class: "btn btn-sm btn-danger"%>
+
+<div class="container">
+	<div class="row">
+	<%= search_form_for @q do |f| %>
+		<div class="col-sm-4">
+  		<%= f.label :name %>
+  		<%= f.search_field :full_name_cont, class: "form-control" %>
+		</div>
+		<div class="col-sm-4">
+			<%= f.label :position %>
+ 	 		<%= f.search_field :position_cont, class: "form-control" %>
+		</div>
+		<div class="col-sm-3">
+			<%= f.label :department_name %>
+			<%= f.collection_select(:department_id_eq, Department.all, :id, :department_name, { 					:prompt => 'Select Department' }, class: "form-control")  %>
+		</div>
+		<div class="col-sm-1">
+			<br>
+			<%= f.submit "Search", class: "btn btn-sm btn-danger "%>
+		</div>
 	<% end %>
 </div>
+</div>
 
+<div class="container">
+	<br>
+</div>
 <div class="jumbotron">
-<%= react_component("UserList", users: @users.as_json(include: :department)) %>
+	<%= react_component("UserList", users: @users.as_json(include: :department)) %>
 </div>
 
 <div class="text-center">

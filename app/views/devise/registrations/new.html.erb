@@ -44,11 +44,7 @@
 							</div>
 					 	 	<div class="container">
 						    <%= f.label :department_id %><br />
-								<%= f.select(:department_id) do %>
-									<% Department.all.each do |content| -%>
-								  	<%= content_tag(:option, content.department_name, value: content.id)%>
-								  <% end %>
-								<% end %>
+								 <%= f.collection_select(:department_id, Department.all, :id, :department_name, { 					:prompt => 'Select Department' }, class: "form-control")  %>
 							</div>
 							<div class="container">
 								<br>

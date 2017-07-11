@@ -12,7 +12,6 @@ var UserList = React.createClass({
               <th>Email</th>
 							<th>Username</th>
 							<th>Department</th>
-							<th>Avatar</th>
               <th></th>
             </tr>
           </thead>
