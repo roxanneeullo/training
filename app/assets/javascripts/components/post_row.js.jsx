@@ -8,8 +8,8 @@ var PostRow = React.createClass({
 					<a href={"/users/"+post.user.id}><img src={post.thumb_path} /></a>
 				</div>
 				<div className="col-md-9">		
-					<h3>{post.user.first_name}</h3>
-					<h4>{post.user.department.department_name}</h4>
+					<h3><a href={"/users/"+post.user.id}> {post.user.first_name} </a></h3>
+					<h4><a href={"/departments/"+post.user.department.id}>{post.user.department.department_name}</a></h4>
 					<h5>{post.created_at}</h5>
 					<p>{post.content}</p>
 					<hr/>

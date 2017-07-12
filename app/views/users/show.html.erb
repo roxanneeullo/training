@@ -9,6 +9,8 @@
 					<%= image_tag @user.avatar.url(:thumb) %>
 				</div>
 				
+				<form class="form-signin">
+			  	<div class="container">
 				<h5>
   				<strong>Username:</strong>
   				<%= @user.username %>
@@ -39,7 +41,9 @@
 					<%= @user.department.department_name%>
 				</h5>
 
-				<%= link_to 'Back', users_path %>
+				<%= link_to 'Back', :back %>
+			</div>
+		</div>
        </div><!--account-->
     	</div><!--login -->
 		</div><!-- col-->
