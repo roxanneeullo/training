@@ -18,12 +18,14 @@ end
   position   = Faker::Name.title
   username   = Faker::Zelda.character
   password   = Faker::Pokemon.name
-  department_id = rand(1..20)
+  department = Department.where(id:(rand(1..Department.count))).first
+  department_id = department.id
   User.create(first_name: first_name, last_name: last_name, email: email, position: position, username: username, password: password, department_id: department_id )
 end
 
 (1..20).each do |i|
   content = Faker::StarWars.wookie_sentence
-  user_id = rand(1..50)
+  user = User.where(id:(rand(1..User.count))).first
+  user_id = user.id
   Post.create(content: content, user_id: user_id )
 end

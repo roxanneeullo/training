@@ -3,37 +3,12 @@
 
 <%= render 'form', post: @post %>
 
-<div class="container">
-	<div class="row">
-  	<div class="col-lg-12">
-    	<h1 class="page-header">Newsfeed
-      	<small>Posts</small>
-      </h1>
-    </div>
- </div>
- 
-	<div class="row">
-		<% @posts.each do |post| %>
- 			<div class="col-md-3">
-  			<%= image_tag post.user.avatar.url(:thumb) %>
- 			</div>
-			<div class="col-md-9">
-  			<h3><%= post.user.first_name %></h3>
-       	<h4><%= post.user.department.department_name %></h4>
-				<h5><%= post.created_at %></h2>
-        <p><%= post.content %></p>
-				<hr>
-			</div>
-		<% end %>
-  </div>
-	
+<%= react_component("NewsfeedPost", posts: @posts.as_json(:include => { :user => {:include=> :department}}, :methods => [:thumb_path])) %>
 
-	<div class="row text-center">
-		<div class="col-lg-12">
-  		<ul class="pagination">
-    		<li><p><%= will_paginate @posts %></p></li>
-    	</ul>
-		</div>
+<div class="row text-center">
+	<div class="col-lg-12">
+  	<ul class="pagination">
+    	<li><p><%= will_paginate @posts %></p></li>
+    </ul>
 	</div>
-
-<hr>
+</div>
