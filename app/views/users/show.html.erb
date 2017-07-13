@@ -1,56 +1,46 @@
 <p id="notice"><%= notice %></p>
 
 
-<div class="jumbotron">
+<div class="container">
 	<div class="row">
-		<div class="col-sm-6 col-md-4 col-md-offset-4">
-    	<div class="account-wall">
-      	<div class="text-center">
+		<div class="col-lg-4 col-sm-6 col-md-offset-4">
+    	<div class="card hovercard">
+      	<div class="cardheader">
+				</div>
+				<div class="avatar">
 					<%= image_tag @user.avatar.url(:thumb) %>
 				</div>
-				
-				<form class="form-signin">
-			  	<div class="container">
-				<h5>
-  				<strong>Username:</strong>
-  				<%= @user.username %>
-				</h5>
-				
-				<h5>
-  				<strong>First name:</strong>
-  				<%= @user.first_name %>
-				</h5>
-
-				<h5>
-  				<strong>Last name:</strong>
-  				<%= @user.last_name %>
-				</h5>
-
-				<h5>
-  				<strong>Position:</strong>
-  				<%= @user.position %>
-				</h5>
-
-				<h5>
-  				<strong>Email:</strong>
-  				<%= @user.email %>
-				</h5>
-
-				<h5>
-					<strong>Department</strong>
-					<%= @user.department.department_name%>
-				</h5>
+			
+			  	<div class="title">
+  					<%= @user.username %>
+					</div>
+					<div class="desc">
+						<strong>First name:</strong>
+  					<%= @user.first_name %>
+					</div>
+					<div class="desc">
+  					<strong>Last name:</strong>
+  					<%= @user.last_name %>
+					</div>
+					<div class="desc">
+	  				<strong>Position:</strong>
+  					<%= @user.position %>
+					</div>	
+					<div class="desc">
+						<strong>Email:</strong>
+  					<%= @user.email %>
+					</div>
+					<div class="desc">
+						<strong>Department</strong>
+						<%= @user.department.department_name%>
+					</div>
 
 				<%= link_to 'Back', :back %>
-			</div>
-		</div>
-       </div><!--account-->
-    	</div><!--login -->
-		</div><!-- col-->
-	</div><!-- row-->
-</div><!-- jumb-->
-
-
+			</div><!--hover-->
+		</div><!--col-->
+       </div><!--row-->
+    	</div><!--cont -->
+	
 
 
 
