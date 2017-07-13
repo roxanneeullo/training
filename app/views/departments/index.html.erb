@@ -26,14 +26,31 @@
         	<td><%= department.department_name %></td>
 				</div>
 					<div class="col-md-3">
-        	<td><%= link_to 'Show', department %></td>
+						<div class="container">
+							<td class="text-center">
+								<span class="glyphicon glyphicon-search"></span>
+								<%= link_to 'View Users', department, :class => "btn btn-info btn-xs" %>
+							</td>
+						</div>
 				</div>
 				<div class="col-md-3">
-        	<td><%= link_to 'Edit', edit_department_path(department) %></td>
+					<div class="container">
+						<td class="text-center">
+							<span class="glyphicon glyphicon-edit"></span>
+							<%= link_to 'Edit Department', edit_department_path(department), :class => "btn btn-info btn-xs" %>
+						</td>
+					</div>
+        	 
 				</div>
 					<div class="col-md-3">
-        	<td><%= link_to 'Destroy', department, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-				</div>
+						<div class="container">
+							<td class="text-center">
+								<span class="glyphicon glyphicon-trash"></span>
+								<%= link_to 'Delete', department, method: :delete, 
+								data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" %>
+							</td>
+						</div>
+					</div>
       	</tr>
     		<% end %>
   		</tbody>
