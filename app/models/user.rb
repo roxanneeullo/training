@@ -8,10 +8,11 @@ class User < ApplicationRecord
   attr_accessor :login
   belongs_to :department
   has_many :posts,  dependent: :destroy
-  validates :username, presence: true, uniqueness: true
+  validates :username, presence: true, uniqueness: true, format: { with: /\A[a-zA-Z0-9]+\Z/ }
   validates :department, presence: true
   validates :email, presence: true, uniqueness: true
   validates :first_name, presence: true
+  validates :last_name, presence: true
   
   has_attached_file :avatar, :styles => { :thumb => "200x200>" }, default_url: "/images/:style/axolotl.jpg"
   validates_attachment :avatar,

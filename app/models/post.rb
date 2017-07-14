@@ -1,8 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   
-  validates :content, presence: true
-  
+  validates :content, presence: true, length: { maximum: 500 }
   def thumb_path
     user.avatar.url(:thumb)
   end

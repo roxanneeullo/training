@@ -41,6 +41,7 @@ GEM
     arel (7.1.4)
     autoprefixer-rails (7.1.1.2)
       execjs
+    autosize (2.3.0.21)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -228,6 +229,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autosize
   bootstrap-sass
   bullet
   byebug

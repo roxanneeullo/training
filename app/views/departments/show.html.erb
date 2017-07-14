@@ -15,13 +15,15 @@
     		</tr>
   		</thead>
   		<tbody>
-   			<% @department.users.each_with_index do |user| %>
+   			<% if @department.users.each_with_index do |user| %>
 				<div class="col-md-3">
-      		<tr>
-        		<td><%= user.first_name %></td>
-      		</tr>
+      			<tr>
+        			<td><%= user.first_name %>&nbsp;<%= user.last_name%></td>
+      			</tr>
+						<% end.empty? %>
+						<td>No users.</td>
+					<% end %>
 				</div>
-    		<% end %>
   		</tbody>
 		</table>
 		<%= link_to 'Edit', edit_department_path(@department) %> |

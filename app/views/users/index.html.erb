@@ -18,7 +18,7 @@
 		</div>
 		<div class="col-sm-3">
 			<%= f.label :department_name %>
-			<%= f.collection_select(:department_id_eq, Department.all, :id, :department_name, { 					:prompt => 'Select Department' }, class: "form-control")  %>
+			<%= f.collection_select(:department_id_eq, Department.order('department_name asc'), :id, :department_name, { 					:prompt => 'Select Department' }, class: "form-control")  %>
 		</div>
 		<div class="col-sm-1">
 			<br>

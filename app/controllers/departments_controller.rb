@@ -29,8 +29,8 @@ class DepartmentsController < ApplicationController
 
     respond_to do |format|
       if @department.save
-        format.html { redirect_to @department, notice: 'Department was successfully created.' }
-        format.json { render :show, status: :created, location: @department }
+        format.html { redirect_to :departments, notice: 'Department was successfully created.' }
+        format.json { render :show, status: :created, location: :department}
       else
         format.html { render :new }
         format.json { render json: @department.errors, status: :unprocessable_entity }
