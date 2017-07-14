@@ -8,7 +8,7 @@
 						<form class="form-signin">
 					  	<div class="container">
 								<%= f.label :username %><br />
-						  	<%= f.text_field :username, autofocus: true, class: "form-control"  %>
+						  	<%= f.text_field :username, autofocus: true, class: "form-control", maxlength: 20  %>
 					  	</div>
 					 	 	<div class="container">
 								<%= f.label :avatar %>
@@ -17,30 +17,30 @@
 					  	</div>
 					 	 	<div class="container">
 					    	<%= f.label :email %><br />
-					    	<%= f.email_field :email, class: "form-control" %>
+					    	<%= f.email_field :email, class: "form-control", maxlength: 20 %>
 					  	</div>
 					 	 	<div class="container">
 					    	<%= f.label :password %>
 					    	<% if @minimum_password_length %>
 					    		<em>(<%= @minimum_password_length %> characters minimum)</em>
 					    	<% end %><br />
-					    	<%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+					    	<%= f.password_field :password, autocomplete: "off", class: "form-control", maxlength: 20 %>
 					  	</div>
 					 	 	<div class="container">
 						    <%= f.label :password_confirmation %><br />
-						    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control"  %>
+						    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", maxlength: 20  %>
 					  	</div>
 					 	 	<div class="container">
 						    <%= f.label :first_name %><br />
-						    <%= f.text_field :first_name, class: "form-control"  %>
+						    <%= f.text_field :first_name, class: "form-control", maxlength: 20  %>
 					  	</div>
 					 	 	<div class="container">
 						    <%= f.label :last_name %><br />
-						    <%= f.text_field :last_name, class: "form-control"  %>
+						    <%= f.text_field :last_name, class: "form-control", maxlength: 20  %>
 					  	</div>
 							<div class="container">
 					    	<%= f.label :position %><br />
-					    	<%= f.text_field :position, class: "form-control"  %>
+					    	<%= f.text_field :position, class: "form-control", maxlength: 20  %>
 							</div>
 					 	 	<div class="container">
 						    <%= f.label :department_id %><br />

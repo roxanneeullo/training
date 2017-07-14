@@ -1,5 +1,6 @@
-<p id="notice"><%= notice %></p>
-
+<% flash.each do |key, value| %>
+	<div class="alert alert-success"><%= value %></div>
+<% end %>
 <div class="text-center title">
 	<h1>Users</h1>
 </div>
@@ -36,6 +37,6 @@
 </div>
 
 <div class="text-center">
-	<%= will_paginate @users %>
+	<%= will_paginate @users, renderer: BootstrapPagination::Rails %>
 </div>
 <br>

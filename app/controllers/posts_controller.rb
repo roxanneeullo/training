@@ -11,11 +11,11 @@ class PostsController < ApplicationController
 
       if @post.save
         redirect_to :back
-        flash[:success] = "Post created!"
+       # flash[:notice] = "Post created!"
       else
         
         redirect_to :back
-        flash[:fail] = "Post cannot be blank!"
+        #flash[:notice] = "Post cannot be blank!"
       end
   end
   
