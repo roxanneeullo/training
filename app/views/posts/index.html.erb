@@ -9,6 +9,7 @@
 	<div class="col-lg-12">
   	<ul class="pagination">
     	<li><p><%= will_paginate @posts, renderer: BootstrapPagination::Rails%></p></li>
+			<p>Showing <%= @posts.size %> of <%= @posts.total_entries %> entries </p>
     </ul>
 	</div>
 </div>

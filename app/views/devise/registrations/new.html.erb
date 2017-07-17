@@ -44,7 +44,7 @@
 							</div>
 					 	 	<div class="container">
 						    <%= f.label :department_id %><br />
-								 <%= f.collection_select(:department_id, Department.all, :id, :department_name, { 					:prompt => 'Select Department' }, class: "form-control")  %>
+								 <%= f.collection_select(:department_id, Department.order('department_name asc'), :id, :department_name, { :prompt => 'Select Department' }, class: "form-control")  %>
 							</div>
 							<div class="container">
 								<br>

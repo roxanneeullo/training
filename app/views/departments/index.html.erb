@@ -63,5 +63,6 @@
 
 <div class="text-center">
 	<%= will_paginate @departments, renderer: BootstrapPagination::Rails %>
+	<p>Showing <%= @departments.size %> of <%= @departments.total_entries %> departments </p>
 </div>
 

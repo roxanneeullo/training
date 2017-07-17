@@ -17,16 +17,16 @@
 			<%= f.label :position %>
  	 		<%= f.search_field :position_cont, class: "form-control" %>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-4">
 			<%= f.label :department_name %>
 			<%= f.collection_select(:department_id_eq, Department.order('department_name asc'), :id, :department_name, { 					:prompt => 'Select Department' }, class: "form-control")  %>
 		</div>
-		<div class="col-sm-1">
-			<br>
+	</div>
+		<div class="pull-right">
+		  </br>
 			<%= f.submit "Search", class: "btn btn-sm btn-danger "%>
 		</div>
 	<% end %>
-</div>
 </div>
 
 <div class="container">
@@ -38,5 +38,7 @@
 
 <div class="text-center">
 	<%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+	<p>Showing <%= @users.size %> of <%= @users.total_entries %> users </p>
+	
 </div>
 <br>
