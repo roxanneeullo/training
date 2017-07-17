@@ -94,6 +94,29 @@
      border-radius: 50%;
  }
  
+ .post {
+	 color: #000000;
+	 text-decoration : none;
+   &:visited {
+     color: #000000;
+   }
+ }
+ 
+ .link {
+   color: #c75d5d;
+
+   &:visited {
+     color: #bf4646;
+   }
+
+   &:hover {
+     color: #cf7474;
+     background-color: #d78b8b;
+   }
+ }
+ 
+ 
+ 
  .custab{
      border: 1px solid #ccc;
      padding: 5px;
@@ -431,3 +454,17 @@
 		     border-radius: 50%;
 		     border: 5px solid rgba(255,255,255,0.5);
 		 }
+		 
+		 
+		 td a { 
+			 color : #ffffff; 
+			 text-decoration : none;
+			 
+		   &:visited {
+		     color: #ffffff;
+		   }
+
+		 }
+		 
+		
+		 

@@ -29,16 +29,14 @@
 					<div class="col-md-3">
 						<div class="container">
 							<td class="text-center">
-								<span class="glyphicon glyphicon-search"></span>
-								<%= link_to 'View Users', department, :class => "btn btn-info btn-xs" %>
+							<a><%= link_to '<button type="button" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-search"></span> &nbsp; View Users</button>'.html_safe, department %></a>
 							</td>
 						</div>
 				</div>
 				<div class="col-md-3">
 					<div class="container">
 						<td class="text-center">
-							<span class="glyphicon glyphicon-edit"></span>
-							<%= link_to 'Edit Department', edit_department_path(department), :class => "btn btn-info btn-xs" %>
+							<a><%= link_to '<button type="button" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-edit"></span>&nbsp; Edit Department</button>'.html_safe, edit_department_path(department) %></a>
 						</td>
 					</div>
         	 
@@ -46,9 +44,9 @@
 					<div class="col-md-3">
 						<div class="container">
 							<td class="text-center">
-								<span class="glyphicon glyphicon-trash"></span>
-								<%= link_to 'Delete', department, method: :delete, 
-								data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" %>
+								
+							<a id="post">	<%= link_to '<button type="button" class = "btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span>&nbsp; Delete</button>'.html_safe, department, method: :delete, 
+								data: { confirm: 'Are you sure?' } %></a>
 							</td>
 						</div>
 					</div>

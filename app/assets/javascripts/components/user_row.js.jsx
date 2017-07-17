@@ -16,7 +16,7 @@ var UserRow = React.createClass({
         <td>{user.email}</td>
 				<td>{user.username}</td>
 				<td>{user.department.department_name}</td>
-        <td><a href={"/users/"+user.id}>Show</a></td>
+        <td><a className="link" href={"/users/"+user.id}>Show</a></td>
       </tr>
     )
   }

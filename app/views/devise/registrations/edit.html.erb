@@ -28,7 +28,7 @@
 						    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
 						    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
 						    <% if @minimum_password_length %>
-						      <br />
+						   
 						      <em><%= @minimum_password_length %> characters minimum</em>
 						    <% end %>
 					  	</div>
@@ -36,11 +36,6 @@
 					     	<%= f.label :password_confirmation %><br />
 					     	<%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control"  %>
 					  	</div>
-							
-						  <div class="container">
-						    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-						    <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
-						  </div>
 							
 					 	 	<div class="container">
 						    <%= f.label :first_name %><br />
@@ -59,8 +54,13 @@
 						    <%= f.collection_select(:department_id, Department.order('department_name asc'), :id, :department_name, { :prompt => 'Select Department' }, class: "form-control")  %>
 							</div>
 							<div class="container">
-								<br>
+								
 							</div>
+							
+						  <div class="container">
+						    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+						    <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+						  </div><br/>
 							
 					   <div class="actions">
 						   <%= f.submit "Update", class: "btn btn-lg btn-danger btn-block"  %>

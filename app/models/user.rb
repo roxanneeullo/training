@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, format: { without: /\s/ }, length: { maximum: 20 }
   validates :first_name, presence: true, length: { maximum: 20 }
   validates :last_name, presence: true, length: { maximum: 20 }
-  validates :password, presence: true, length: { maximum: 20 }
+  validates :password, length: { maximum: 20 }
   
   has_attached_file :avatar, :styles => { :thumb => "200x200>" }, default_url: "/images/:style/axolotl.jpg"
   validates_attachment :avatar,

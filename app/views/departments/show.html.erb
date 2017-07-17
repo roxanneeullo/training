@@ -19,10 +19,10 @@
    			<% if @department.users.each_with_index do |user| %>
 				<div class="col-md-3">
       			<tr>
-        			<td><a href="/users/<%= user.id %>"><%= user.first_name %>&nbsp;<%= user.last_name%></td>
+        			<td><a class="post" href="/users/<%= user.id %>"><%= user.first_name %>&nbsp;<%= user.last_name%></td>
       			</tr>
 						<% end.empty? %>
-						<td>No users.</td>
+						<td><strong>No users.</strong></td>
 					<% end %>
 				</div>
   		</tbody>
