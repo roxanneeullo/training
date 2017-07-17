@@ -6,6 +6,7 @@ var UserList = React.createClass({
         <table className="table table-striped">
           <thead>
             <tr>
+							<th>Avatar</th>
               <th>First name</th>
               <th>Last name</th>
               <th>Position</th>

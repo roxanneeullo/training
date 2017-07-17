@@ -5,7 +5,13 @@ var PostRow = React.createClass({
     return (
 			<div className="row">
 				<div className="col-md-3">
-					<a href={"/users/"+post.user.id}><img src={post.thumb_path} /></a>
+					<div className="card hovercard">
+      			<div className="cardheader">
+						</div>
+						<div className="avatar">
+							<a href={"/users/"+post.user.id}><img src={post.thumb_path} /></a>
+						</div>
+					</div>
 				</div>
 				<div className="col-md-9">		
 					<h3><a href={"/users/"+post.user.id}> {post.user.first_name} </a></h3>

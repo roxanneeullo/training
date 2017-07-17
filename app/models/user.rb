@@ -37,5 +37,9 @@ class User < ApplicationRecord
       parent.table[:last_name]
     )
   end
+  
+  def thumb_path
+    avatar.url(:thumb)
+  end
       
 end

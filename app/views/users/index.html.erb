@@ -33,8 +33,15 @@
 	<br>
 </div>
 <div class="jumbotron">
-	<%= react_component("UserList", users: @users.as_json(include: :department)) %>
+	<%= react_component("UserList", users: @users.as_json(include: :department, :methods => [:thumb_path])) %>
 </div>
+
+
+
+<%= react_component("NewsfeedPost", posts: @posts.as_json(:include => { :user => {:include=> :department}}, :methods => [:thumb_path]), current_user: current_user) %>
+
+
+
 
 <div class="text-center">
 	<%= will_paginate @users, renderer: BootstrapPagination::Rails %>
