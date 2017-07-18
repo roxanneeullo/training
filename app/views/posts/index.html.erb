@@ -3,7 +3,7 @@
 
 <%= render 'form', post: @post %>
 
-<%= react_component("NewsfeedPost", posts: @posts.as_json(:include => { :user => {:include=> :department}}, :methods => [:thumb_path]), current_user: current_user) %>
+<%= react_component( "NewsfeedPost", {current_user: current_user, posts: @posts.as_json(:include => { :user => {:include=> :department}}, :methods => [:thumb_path])}) %>
 
 <div class="row text-center">
 	<div class="col-lg-12">

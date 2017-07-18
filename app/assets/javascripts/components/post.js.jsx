@@ -10,8 +10,9 @@ var NewsfeedPost = React.createClass({
     		</div>
  		 	</div>
  		 	<div className="container">
-      		{this.props.posts.map(function(post, i){
-        		return <PostRow key={i} post={post}/>
+      		{this.props.posts.map((post, i) => {
+        		return( <PostRow current_user={this.props.current_user} key={i} post={post}/>
+						);
       		})}
 			</div>
 		</div>

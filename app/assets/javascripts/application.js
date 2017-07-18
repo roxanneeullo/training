@@ -58,16 +58,10 @@
 						      }
 						    }
 						  document.getElementById('preview-here').addEventListener('change', handleFileSelect, false);
-
+							
+							
 	    });
 			
-			var ta = document.querySelector('review_text');
-			ta.style.display = 'none';
-			autosize(ta);
-			ta.style.display = '';
-
-			// Call the update method to recalculate the size:
-			autosize.update(ta);
 			
 			
 			

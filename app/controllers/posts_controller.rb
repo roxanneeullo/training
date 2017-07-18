@@ -6,6 +6,10 @@ class PostsController < ApplicationController
      @maximum_length = Post.validators_on(:content).first.options[:maximum]
   end
   
+  def show
+     @post = Post.find(params[:id])
+  end
+  
   def create
     @post = current_user.posts.create(post_params)
 
@@ -22,7 +26,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if post.update(post_params)
-        format.html { redirect_to :posts, notice: 'Department was successfully updated.' }
+        format.html { redirect_to :posts, notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: :post }
       else
         format.html { render :index }
@@ -32,13 +36,15 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
-    respond_to do |format|
-      format.html { redirect_to :posts, notice: 'Department was successfully destroyed.' }
+    @post = Post.find(params[:id])
+    if @post.present?
+      @post.destroy
+      respond_to do |format|
+      format.html { redirect_to posts_url, notice: 'Post was successfully deleted.' }
       format.json { head :no_content }
     end
   end
-  
+  end
   
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -48,7 +54,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:content, :user_id)
+      params.require(:post).permit(:content, :user_id, :id)
     end
   
 end
