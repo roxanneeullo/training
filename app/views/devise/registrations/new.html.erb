@@ -10,11 +10,12 @@
 								<%= f.label :username %><br />
 						  	<%= f.text_field :username, autofocus: true, class: "form-control", maxlength: 20  %>
 					  	</div>
-					 	 	<div class="container">
-								<%= f.label :avatar %>
-								<%= f.file_field :avatar %>
-								<%= image_tag @user.avatar.url(:thumb) %>
-					  	</div>
+				 	 	<div class="container">
+							<%= f.label :avatar %>
+							<%= f.file_field :avatar, id:"preview-here" %>
+							<%= image_tag @user.avatar.url(:thumb), class: "profile-img", id: "preview" %>
+							
+				  	</div>
 					 	 	<div class="container">
 					    	<%= f.label :email %><br />
 					    	<%= f.email_field :email, class: "form-control", maxlength: 20 %>

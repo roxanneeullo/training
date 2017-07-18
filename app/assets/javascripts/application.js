@@ -40,6 +40,25 @@
 				            $('#post_btn').attr('disabled',true);
 				    })
 
+						function handleFileSelect(evt) {
+						    var files = evt.target.files; // FileList object
+						      f=files[0]
+						      // Only process image files.
+						      if (f.type.match('image.*')) {
+						        var reader = new FileReader();
+						        reader.onload = (function(theFile) {
+						          return function(e) {
+						            // alert(e.target.result);
+						            document.getElementById('preview').src=e.target.result;
+						          };
+						        })(f);
+
+						      // Read in the image file as a data URL.
+						      reader.readAsDataURL(f);
+						      }
+						    }
+						  document.getElementById('preview-here').addEventListener('change', handleFileSelect, false);
+
 	    });
 			
 			var ta = document.querySelector('review_text');
@@ -49,3 +68,6 @@
 
 			// Call the update method to recalculate the size:
 			autosize.update(ta);
+			
+			
+			

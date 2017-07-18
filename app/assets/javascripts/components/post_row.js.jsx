@@ -18,6 +18,7 @@ var PostRow = React.createClass({
 					<h4><a href={"/departments/"+post.user.department.id}>{post.user.department.department_name}</a></h4>
 					<h5>{post.created_at}</h5>
 					<p>{post.content}</p>
+					
 					<hr/>
 				</div>
 			</div>
