@@ -34,6 +34,12 @@
 						<strong>Department</strong>
 						<%= @user.department.department_name%>
 					</div>
+					
+					<% if current_user.id == @user.id %>
+					<div class="desc">
+						<a href=<%= edit_user_registration_path %>>EDIT Profile</a>
+					</div>
+						<% end %>
 
 				<%= link_to 'Back', :back %>
 			</div><!--hover-->

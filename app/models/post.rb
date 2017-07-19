@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   end
   
   def as_json(options = {})
-    super.merge(created_at: created_at.strftime('%d.%m.%Y %H:%M:%S'))
+    super.merge(created_at: created_at.localtime.strftime('%I:%M%p, %d %b, \'%y'))
   end
   
 end

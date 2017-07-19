@@ -4,6 +4,7 @@
 <p>
   <strong>Department name:</strong>
 	<%= @department.department_name %>
+		
 </p>
 
 <div class="container">
@@ -19,7 +20,19 @@
    			<% if @department.users.each_with_index do |user| %>
 				<div class="col-md-3">
       			<tr>
-        			<td><a class="post" href="/users/<%= user.id %>"><%= user.first_name %>&nbsp;<%= user.last_name%></td>
+							<td>
+								<div class="card hovercard2">
+				      		<div class="cardheader">
+									</div>
+									<div class="avatar">
+										<a href="/users/<%= user.id %>"><%= image_tag user.avatar.url(:thumb) %></a>
+									</div>
+								</div>
+							</td>
+        			<td>
+								<a class="post" href="/users/<%= user.id %>"><%= user.first_name %>&nbsp;<%= user.last_name%></a>
+							</td>
+								
       			</tr>
 						<% end.empty? %>
 						<td><strong>No users.</strong></td>
